@@ -13,7 +13,3 @@ class CSV_reader:
 				converted.append(row)
 	
 		return converted
-
-
-#print(CSV_reader.read_csv('problemAND.csv'))
-#print(CSV_reader.read_csv('students.csv'))

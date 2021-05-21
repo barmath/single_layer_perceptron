@@ -1,3 +1,4 @@
+
 from perceptron import Perceptron
 from reader import CSV_reader 
 
@@ -33,10 +34,6 @@ for i in range(1,len(prediction_tests)):
 	inputs[1] = int(prediction_tests[i][1])
 	result = perceptron.predict(inputs)
 	print(f'The result for {prediction_tests[i][0]}, {prediction_tests[i][1]} = {result} the true is {prediction_tests[i][2]}.')
-
-
-
-
 
 
 
