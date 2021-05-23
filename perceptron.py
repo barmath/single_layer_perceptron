@@ -5,9 +5,9 @@ class Perceptron(object):
         self.weights = [0 for i in range(no_of_inputs+1)]
  
     def predict(self, inputs):
-	# Adding the bias
+	    # Adding the bias
         activation = self.weights[0]
-	# Adding the weights 
+	    # Adding the weights 
         for i in range(1,len(self.weights)):
             activation += self.weights[i]*inputs[i-1]
       

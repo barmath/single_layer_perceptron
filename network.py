@@ -16,14 +16,7 @@ class Network_manager(object):
         return result
 
     def directioner_of_trainning_data(self, training_inputs, labels):
-        #self.perceptron.train(training_inputs, labels)
-        '''
-        for label in labels:
-            for index in range(len(label)):
-                if label[index] == 1 : 
-                    print(index, end=", ")
-            print()
-        '''
+
         labels_transposed = self.partitione_by_letter(labels)
 
         index = 0
@@ -31,22 +24,7 @@ class Network_manager(object):
             self.array_of_neurons[index].train(training_inputs, row)
             index += 1
         print('Done with training')
-        ''''''
-        #self.array_of_neurons[index].train(training_inputs[index], labels[index])
-        #print(mappend)
 
-        '''
-        for label in labels:
-            column_labels = []
-            for index in range(len(label)):
-                if label[index] == 1 : 
-
-                    print(labels[index])
-                    column_labels.append(1)
-                else:
-                    column_labels.append(0)
-            print()
-        '''   
     def results_temp(self,prediction_tests, test_labels):
         result = []
         final_answer = []
@@ -57,25 +35,8 @@ class Network_manager(object):
             temp = []
             for index_neoron in range(self.number_of_neorons):
                 result = self.array_of_neurons[index_neoron].predict(test_row)
-                #print(f' result for neuron : {index_neoron} = {result} ')
                 if result == 1 :
                     temp.append(index_neoron)
             final_answer.append(temp)
 
         return final_answer
-
-
-
-        """
-
-        """
-
-        '''
-        inputs = [0,0]
-        result =  []
-        for i in range(1,len(prediction_tests)):
-            inputs[0] = int(prediction_tests[i][0])
-            inputs[1] = int(prediction_tests[i][1])
-            result = self.perceptron.predict(inputs)
-            print(f'The result for {prediction_tests[i][0]}, {prediction_tests[i][1]} = {result} the true is {prediction_tests[i][2]}.')
-        '''
