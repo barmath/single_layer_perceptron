@@ -47,14 +47,55 @@ training_inputs, labels = data_organizer('caracteres-limpo2.csv')
 
 #data_organizer('caracteres-limpo2.csv')
 
+def labels_numerator(labels):
+	numered_labels = []
+	for label in labels:
+		for index in range(len(label)):
+			if label[index] == 1 :
+				numered_labels.append(index)
+
+	return numered_labels
+
 # Trainning step  
 
 network = Network_manager()
 network.directioner_of_trainning_data(training_inputs,labels)
 
+# Testing step 
+
+# First Test
+
+print('First Test')
+
+test_data, test_labels = data_organizer('caracteres-ruido2.csv')
+
+numered_labels = labels_numerator(test_labels)
+
+results = network.results_temp(test_data, numered_labels)
+
+for index in range(len(numered_labels)):
+	print(f'correct answer is : {numered_labels[index]}',end=', the predictions are : ')
+	for j in range(len(results[index])):
+		print(f' p{j} : {results[index][j]}',end=', ')
+	print()
 
 
+# Second Test
 
+print('Second Test')
+
+test_data, test_labels = data_organizer('caracteres-ruido22.csv')
+
+numered_labels = labels_numerator(test_labels)
+
+results = network.results_temp(test_data, numered_labels)
+
+for index in range(len(numered_labels)):
+	print(f'correct answer is : {numered_labels[index]}',end=', the predictions are : ')
+	for j in range(len(results[index])):
+		print(f' p{j} : {results[index][j]}',end=', ')
+	print()
+""""""
 #perceptron = Perceptron(2)
 #perceptron.train(training_inputs, labels)
 

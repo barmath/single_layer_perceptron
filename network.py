@@ -1,9 +1,9 @@
 from perceptron import Perceptron
 
 class Network_manager(object):
-    def __init__(self, number_of_inputs = 63, number_of_neurons = 7):
+    def __init__(self, number_of_inputs = 63, number_of_neorons = 7):
         self.number_of_inputs = number_of_inputs
-        self.number_of_neorons = number_of_neurons
+        self.number_of_neorons = number_of_neorons
         self.neurons_instantiation()
 
     def neurons_instantiation(self):
@@ -47,8 +47,27 @@ class Network_manager(object):
                     column_labels.append(0)
             print()
         '''   
-    def results_temp(self,prediction_tests):
+    def results_temp(self,prediction_tests, test_labels):
+        result = []
+        final_answer = []
+        index = 0
+        has_answer = False
+
+        for test_row in prediction_tests:
+            temp = []
+            for index_neoron in range(self.number_of_neorons):
+                result = self.array_of_neurons[index_neoron].predict(test_row)
+                #print(f' result for neuron : {index_neoron} = {result} ')
+                if result == 1 :
+                    temp.append(index_neoron)
+            final_answer.append(temp)
+
+        return final_answer
+
+
+
         """
+
         """
 
         '''
