@@ -16,6 +16,7 @@ class Perceptron(object):
         return 0
     
     def train(self, training_inputs, labels):
+        print('trainnig ... ')
         for _ in range(self.threshold):
             for inputs, label in zip(training_inputs, labels):
                 prediction = self.predict(inputs)
