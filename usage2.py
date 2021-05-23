@@ -74,21 +74,7 @@ print('First Test')
 usage_utilities.predict('caracteres-ruido2.csv')
 print('Second Test')
 usage_utilities.predict('caracteres-ruido22.csv')
-#data_organizer('caracteres-limpo2.csv')
 
-# Trainning step  
-
-
-
-# Testing step 
-
-# First Test
-
-
-
-
-
-# Second Test
 
 
 
